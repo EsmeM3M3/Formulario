@@ -17,3 +17,6 @@ Estilo: Utiliza estilos CSS para mejorar la presentación visual, incluyendo una
 Script: Un script JavaScript extrae los parámetros de la URL y los muestra en los elementos correspondientes de la página.
 Funcionamiento
 Transición de Páginas: Los datos del formulario se envían a la segunda página (result.html).
+
+
+nota: si no se llega a ver el formulario por el link, coloco la carpeta de vista previa para que puedan visualizar el diseño del formulario
