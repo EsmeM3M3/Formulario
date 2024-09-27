@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Formulario</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #e2e2e2;
+            margin: 20px;
+            padding: 20px;
+        }
+        .result {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h2 {
+            color: #333;
+        }
+        .color-sample {
+            width: 50px;
+            height: 50px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <div class="result">
+        <h2>Tu Eres</h2>
+        <p><strong>Nombre Completo:</strong> <span id="nameResult"></span></p>
+        <p><strong>Apodo:</strong> <span id="apodoResult"></span></p>
+        <p><strong>Edad:</strong> <span id="edadResult"></span></p>
+        <p><strong>Sexo:</strong> <span id="sexResult"></span></p>
+        <p><strong>Fecha de Cumpleaños:</strong> <span id="birthdayResult"></span></p>
+        <p><strong>¿Dónde vives Actualmente?:</strong> <span id="viveActualResult"></span></p>
+        <p><strong>Color Favorito:</strong> <span class="color-sample" id="colorResult"></span></p>
+        <p><strong>Comida Favorita:</strong> <span id="foodResult"></span></p>
+        <p><strong>Bebida Favorita:</strong> <span id="bebidaResult"></span></p>
+        <p><strong>¿Qué te gusta más hacer?:</strong> <span id="hobbiesResult"></span></p>
+        <p><strong>¿Tienes mascotas?:</strong> <span id="mascotasResult"></span></p>
+        <p><strong>¿Cuántos?:</strong> <span id="cuantosResult"></span></p>
+        <p><strong>Tipo de mascota:</strong> <span id="tipoResult"></span></p>
+        <p><strong>Nombres de las mascotas:</strong> <span id="mascotasNombresResult"></span></p>
+        <p><strong>Correo Electrónico:</strong> <span id="emailResult"></span></p>
+        <p><strong>Número:</strong> <span id="numberResult"></span></p>
+        <p><strong>¿A qué hora terminaste?:</strong> <span id="timeResult"></span></p>
+    </div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById('nameResult').textContent = params.get('name');
+        document.getElementById('apodoResult').textContent = params.get('apodo');
+        document.getElementById('edadResult').textContent = params.get('edad');
+        document.getElementById('sexResult').textContent = params.get('sex');
+        document.getElementById('birthdayResult').textContent = params.get('birthday');
+        document.getElementById('viveActualResult').textContent = params.get('viveActual');
+        
+        const favoriteColor = params.get('favorite-color');
+        document.getElementById('colorResult').style.backgroundColor = favoriteColor;
+        
+        document.getElementById('foodResult').textContent = params.get('food');
+        document.getElementById('bebidaResult').textContent = params.get('bebida');
+        
+        const hobbies = params.getAll('hobbies').join(', ');
+        document.getElementById('hobbiesResult').textContent = hobbies;
+        
+        document.getElementById('mascotasResult').textContent = params.get('mascotas');
+        document.getElementById('cuantosResult').textContent = params.get('cuantos');
+        document.getElementById('tipoResult').textContent = params.get('tipo');
+        document.getElementById('mascotasNombresResult').textContent = params.get('mascotasNombres');
+        document.getElementById('emailResult').textContent = params.get('email');
+        document.getElementById('numberResult').textContent = params.get('number');
+        document.getElementById('timeResult').textContent = params.get('time');
+    </script>
+</body>
+</html>
